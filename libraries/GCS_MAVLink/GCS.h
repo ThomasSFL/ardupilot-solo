@@ -158,6 +158,11 @@ public:
     */
     static void send_to_components(const mavlink_message_t* msg) { routing.send_to_components(msg); }
 
+    /*
+      send a MAVLink message to all channels
+    */
+    static void send_on_all_channels(const mavlink_message_t* msg) { routing.send_on_all_channels(msg); }
+
 private:
     void        handleMessage(mavlink_message_t * msg);
 
