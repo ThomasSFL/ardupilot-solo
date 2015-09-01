@@ -6,6 +6,8 @@
 #define THISFIRMWARE "APM:Copter V3.3-dev"
 #endif
 
+//first commit
+
 /*
    This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
