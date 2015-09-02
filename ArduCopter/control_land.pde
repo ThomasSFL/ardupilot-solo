@@ -27,6 +27,9 @@ static bool land_init(bool ignore_checks)
     land_start_time = millis();
 
     land_pause = false;
+    
+    // reset flag indicating if pilot has applied roll or pitch inputs during landing
+    ap.land_repo_active = false;
 
     return true;
 }
@@ -100,6 +103,13 @@ static void land_gps_run()
 
     // process roll, pitch inputs
     wp_nav.set_pilot_desired_acceleration(roll_control, pitch_control);
+
+#if PRECISION_LANDING == ENABLED
+    // run precision landing
+    if (!ap.land_repo_active) {
+        wp_nav.shift_loiter_target(precland.get_target_shift(wp_nav.get_loiter_target()));
+    }
+#endif
 
     // run loiter controller
     wp_nav.update_loiter(ekfGndSpdLimit, ekfNavVelGainScaler);
