@@ -68,8 +68,10 @@ void AC_PrecLand::init()
     switch ((enum PrecLandType)(_type.get())) {
         // no type defined
         case PRECLAND_TYPE_NONE:
-        default:
-            return;
+/*        default:
+            return; TMSedit*/
+            _backend = new AC_PrecLand_IRLock(*this, _backend_state);
+            break;
         // companion computer
         case PRECLAND_TYPE_COMPANION:
             _backend = new AC_PrecLand_Companion(*this, _backend_state);

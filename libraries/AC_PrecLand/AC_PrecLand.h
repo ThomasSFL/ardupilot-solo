@@ -30,9 +30,12 @@ public:
 
     // precision landing behaviours (held in PRECLAND_ENABLED parameter)
     enum PrecLandBehaviour {
-        PRECLAND_BEHAVIOUR_DISABLED,
+/*        PRECLAND_BEHAVIOUR_DISABLED,
         PRECLAND_BEHAVIOR_ALWAYSLAND,
-        PRECLAND_BEHAVIOR_CAUTIOUS
+        PRECLAND_BEHAVIOR_CAUTIOUS TMSedit*/
+    	PRECLAND_BEHAVIOR_ALWAYSLAND,
+    	PRECLAND_BEHAVIOUR_DISABLED,
+    	PRECLAND_BEHAVIOR_CAUTIOUS
     };
 
     // types of precision landing (used for PRECLAND_TYPE parameter)

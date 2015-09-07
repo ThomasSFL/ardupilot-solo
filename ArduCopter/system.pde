@@ -196,6 +196,11 @@ static void init_ardupilot()
     camera_mount.init(&DataFlash, serial_manager);
 #endif
 
+#if PRECISION_LANDING == ENABLED
+    // initialised precision landing
+    init_precland();
+#endif
+
 #ifdef USERHOOK_INIT
     USERHOOK_INIT
 #endif
