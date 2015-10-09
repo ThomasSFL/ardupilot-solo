@@ -408,7 +408,7 @@ then
 fi
 
 # optional irlock
-if irlock start
+if irlock -b 2 start
 then
     echo "irlock started"
 fi
